@@ -3,24 +3,15 @@ let counterDisplayElem = document.querySelector('#value');
 let counterMinusElem = document.querySelector("[data-action='decrement']");
 let counterPlusElem = document.querySelector("[data-action='increment']");
 
-let count = 0;
-
-updateDisplay();
+let count=0;
 
 counterPlusElem.addEventListener("click",()=>{
-    count++;
-    updateDisplay();
+    count+=1;
+counterDisplayElem.textContent = count;
 }) ;
 
 counterMinusElem.addEventListener("click",()=>{
-   if (count > 0)
-   {
-    count--;
-    updateDisplay();
-}
-    else return;
-});
-
-function updateDisplay(){
+    count-=1;
     counterDisplayElem.textContent = count;
-};
+}) ;
+  

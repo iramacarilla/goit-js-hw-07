@@ -24,7 +24,7 @@ function randomColor() {
   }
   
   function deleteBoxes() {
-    divList.textContent = '';
+    divList.innerHTML = '';
     amountFromUser.value = '';
   }
   

@@ -15,18 +15,12 @@ const images = [
       alt: 'Group of Horses Running',
     },
   ];
- 
+  const galleryRef = document.querySelector('#gallery');
+  const imageMarkup = images.map(image => {
+    return `<li class><img src="${image.url}" alt="${image.alt}" class = 'gallery__image' ></li>`;
+  });
+  
+  galleryRef.insertAdjacentHTML('afterbegin', imageMarkup.join(''));
+  
 
-  const createList = image => {
-      const listRef = document.createElement('li');
-      const imageRef = document.createElement('img');
-      imageRef.setAttribute('scr', `${image.url}`);
-      imageRef.setAttribute('alt', `${image.alt}`);
-      listRef.appendChild(imageRef);
-      return listRef;
-  }
-  const createImageList = images.map(image => createList(image));
-console.log(createImageList);
-const imageList = document.querySelector('#gallery');
-
-imageList.append(...createImageList)
+  
